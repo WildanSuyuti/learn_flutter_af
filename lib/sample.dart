@@ -1,14 +1,21 @@
-class Shape {
-  static const double phi = 22 / 7;
-  final double luas;
+class Person {
+  final String name;
+  final String address;
 
-  Shape(this.luas);
+  Person(this.name, this.address);
 }
 
-_main() {
-  var shape = Shape(10);
-  Shape shape2 = Shape(13);
+class Student {
+  final Person person;
+  final String school;
 
-  shape.luas;
-  Shape.phi;
+  Student({required this.person, required this.school});
+}
+
+_() {
+  Person person = Person('Abdullah', 'Sidayu');
+  Student student = Student(
+    person: Person('Abdullah', 'Sidayu'),
+    school: "Ma'had Al-Furqon",
+  );
 }

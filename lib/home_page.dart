@@ -8,7 +8,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Ini adalah Judul'),
+        title: const Text('Ini adalah Judul 2'),
       ),
       body: Center(
         child: Container(
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
           color: Colors.red,
           child: const Center(
             child: Text(
-              'Hello World',
+              'Hello World 0000',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 50,
