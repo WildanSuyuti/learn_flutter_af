@@ -6,29 +6,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Ini adalah Judul 2'),
-      ),
-      body: Center(
-        child: Container(
-          margin: const EdgeInsets.all(16),
-          padding: const EdgeInsets.all(16),
-          width: MediaQuery.of(context).size.width,
-          height: 200,
-          color: Colors.red,
-          child: const Center(
-            child: Text(
-              'Hello World 0000',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 50,
-                fontWeight: FontWeight.w900,
-              ),
-            ),
+        title: const Text('Halaman Home'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              debugPrint('Tombol telah di tekan');
+            },
+            icon: const Icon(Icons.notification_add),
           ),
-        ),
+          TextButton(
+            onPressed: onPressed,
+            child: const Text(
+              'test',
+              style: TextStyle(color: Colors.white),
+            ),
+          )
+        ],
+      ),
+      body: const Center(
+        child: Text('Ini adalah halaman home'),
       ),
     );
+  }
+
+  onPressed() {
+    debugPrint('Tombol telah di tekan');
   }
 }
