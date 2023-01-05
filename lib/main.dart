@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'login/login_page.dart';
+import 'package:learn_flutter/row/row_demo_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.red),
       // home: const LoginPage(),
-      home: const LoginPage(),
+      home: const RowDemoPage(),
     );
   }
 }
