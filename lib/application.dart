@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'learn_button_page.dart';
+import 'package:learn_flutter/home_page.dart';
 
 class Application extends StatelessWidget {
   const Application({Key? key}) : super(key: key);
@@ -8,7 +7,7 @@ class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: LearnButtonPage(),
+      home: HomePage(),
     );
   }
 }
