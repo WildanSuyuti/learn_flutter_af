@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class SecondRoute extends StatelessWidget {
-  const SecondRoute({Key? key}) : super(key: key);
+class ThirdPage extends StatelessWidget {
+  const ThirdPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +13,7 @@ class SecondRoute extends StatelessWidget {
           },
           icon: const Icon(Icons.chevron_left),
         ),
-        title: const Text('Second Route'),
+        title: const Text('Halaman 3'),
       ),
       body: Center(
         child: ElevatedButton(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/route/first_route.dart';
+import 'package:learn_flutter/pages/first_page.dart';
 
 main() => runApp(const Application());
 
@@ -10,7 +10,7 @@ class Application extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstRoute(),
+      home: FirstPage(),
     );
   }
 }
