@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class ThirdPage extends StatelessWidget {
   const ThirdPage({Key? key}) : super(key: key);
@@ -9,7 +10,8 @@ class ThirdPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            SystemNavigator.pop();
           },
           icon: const Icon(Icons.chevron_left),
         ),
@@ -18,7 +20,8 @@ class ThirdPage extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            SystemNavigator.pop();
           },
           child: const Text('Kembali'),
         ),
