@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/first_page.dart';
+import 'package:learn_flutter/pages/second_page.dart';
+import 'package:learn_flutter/pages/third_page.dart';
 
 main() => runApp(const Application());
 
@@ -8,9 +10,15 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: FirstPage(),
+      // home: const FirstPage(),
+      initialRoute: '/',
+      routes: {
+        FirstPage.route: (context) => const FirstPage(),
+        SecondPage.route: (context) => const SecondPage(),
+        '/third': (context) => const ThirdPage(),
+      },
     );
   }
 }

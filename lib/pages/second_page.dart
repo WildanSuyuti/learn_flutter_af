@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/first_page.dart';
 import 'package:learn_flutter/pages/third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
+
+  static const String route = '/second';
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +37,15 @@ class SecondPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
+/*                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => const ThirdPage()),
+                  );*/
+                  // Navigator.pushNamed(context, '/third');
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/third',
+                    ModalRoute.withName(FirstPage.route),
                   );
                 },
                 child: const Text('Buka Halaman Ketiga'),
