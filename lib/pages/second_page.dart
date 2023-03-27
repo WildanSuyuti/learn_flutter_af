@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/pages/first_page.dart';
-import 'package:learn_flutter/pages/third_page.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -37,11 +36,6 @@ class SecondPage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-/*                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ThirdPage()),
-                  );*/
-                  // Navigator.pushNamed(context, '/third');
                   Navigator.pushNamedAndRemoveUntil(
                     context,
                     '/third',

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/form_field_page.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({Key? key}) : super(key: key);
@@ -15,6 +16,15 @@ class FirstPage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            Padding(
+              padding: const EdgeInsets.only(bottom: 16),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, FormFieldPage.route);
+                },
+                child: const Text('Form Field Demo'),
+              ),
+            ),
             Padding(
               padding: const EdgeInsets.only(bottom: 16),
               child: ElevatedButton(
