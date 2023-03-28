@@ -4,6 +4,8 @@ import 'package:learn_flutter/pages/form_field_page.dart';
 import 'package:learn_flutter/pages/second_page.dart';
 import 'package:learn_flutter/pages/third_page.dart';
 
+import 'pages/login_page.dart';
+
 main() => runApp(const Application());
 
 class Application extends StatelessWidget {
@@ -19,6 +21,7 @@ class Application extends StatelessWidget {
         SecondPage.route: (context) => const SecondPage(),
         '/third': (context) => const ThirdPage(),
         FormFieldPage.route: (context) => const FormFieldPage(),
+        LoginPage.route: (context) => const LoginPage(),
       },
     );
   }

@@ -23,54 +23,66 @@ class _FormFieldPageState extends State<FormFieldPage> {
         padding: const EdgeInsets.all(8.0),
         child: Form(
           key: _formKey,
-          child: Column(
-            children: [
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Masukkan Nama',
-                  label: Text('Nama'),
-                  filled: true,
-                  fillColor: Colors.yellow,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Masukkan Nama',
+                    label: Text('Nama'),
+                    filled: true,
+                    fillColor: Colors.yellow,
+                  ),
+                  validator: (String? value) {
+                    if (value?.isEmpty ?? false) {
+                      setState(() => _message = 'Belum Tervalidasi');
+                      return 'Silahkan isi nama';
+                    }
+                    if ((value?.length ?? 0) < 6) {
+                      return 'Nama tidak boleh kurang dari 6 karakter';
+                    }
+                    return null;
+                  },
                 ),
-                validator: (String? value) {
-                  if (value?.isEmpty ?? false) {
-                    setState(() => _message = 'Belum Tervalidasi');
-                    return 'Silahkan isi nama';
-                  }
-                  if((value?.length ?? 0) < 6){
-                    return 'Nama tidak boleh kurang dari 6 karakter';
-                  }
-                  return null;
-                },
-              ),
-              const SizedBox(height: 16),
-              TextFormField(
-                decoration: const InputDecoration(
-                  hintText: 'Masukkan Alamat',
-                  label: Text('Alamat'),
-                  filled: true,
-                  fillColor: Colors.yellow,
+                const SizedBox(height: 16),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'Masukkan Alamat',
+                    label: Text('Alamat'),
+                    filled: true,
+                    fillColor: Colors.yellow,
+                  ),
+                  validator: (String? value) {
+                    if (value?.isEmpty ?? false) {
+                      setState(() => _message = 'Belum Tervalidasi');
+                      return 'Silahkan isi Alamat';
+                    }
+                    return null;
+                  },
                 ),
-                validator: (String? value) {
-                  if (value?.isEmpty ?? false) {
-                    setState(() => _message = 'Belum Tervalidasi');
-                    return 'Silahkan isi Alamat';
-                  }
-                  return null;
-                },
-              ),
-              MaterialButton(
-                color: Colors.grey[200],
-                onPressed: () {
-                  if (_formKey.currentState?.validate() ?? false) {
-                    setState(() => _message = 'Berhasil Tervalidasi');
-                  }
-                },
-                child: const Text('Ok'),
-              ),
-              const SizedBox(height: 24),
-              Text(_message ?? 'Belum Tervalidasi'),
-            ],
+                const SizedBox(height: 16),
+/*                const TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Masukkan Umur',
+                    label: Text('Umur'),
+                    filled: true,
+                    fillColor: Colors.yellow,
+                  ),
+                  keyboardType: TextInputType.number,
+                ),*/
+                MaterialButton(
+                  color: Colors.grey[200],
+                  onPressed: () {
+                    if (_formKey.currentState?.validate() ?? false) {
+                      setState(() => _message = 'Berhasil Tervalidasi');
+                    }
+                  },
+                  child: const Text('Ok'),
+                ),
+                const SizedBox(height: 24),
+                Text(_message ?? 'Belum Tervalidasi'),
+              ],
+            ),
           ),
         ),
       ),
