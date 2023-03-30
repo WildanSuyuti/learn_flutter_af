@@ -4,7 +4,7 @@ import 'package:learn_flutter/pages/form_field_page.dart';
 import 'package:learn_flutter/pages/second_page.dart';
 import 'package:learn_flutter/pages/third_page.dart';
 
-import 'pages/login_page.dart';
+import 'pages/login/login_page.dart';
 
 main() => runApp(const Application());
 
