@@ -20,7 +20,12 @@ class Application extends StatelessWidget {
         FirstPage.route: (context) => const FirstPage(),
         SecondPage.route: (context) => const SecondPage(),
         '/third': (context) => const ThirdPage(),
-        // FormFieldPage.route: (context) => const FormFieldPage(),
+        FormFieldPage.route: (context) {
+          final arguments = ModalRoute.of(context)?.settings.arguments;
+          Map<String, dynamic>? result;
+          if (arguments != null) result = arguments as Map<String, dynamic>;
+          return FormFieldPage(arguments: result);
+        },
         LoginPage.route: (context) => const LoginPage(),
       },
     );

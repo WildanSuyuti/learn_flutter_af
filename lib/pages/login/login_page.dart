@@ -101,8 +101,36 @@ class _LoginPageState extends State<LoginPage> {
                       color: Colors.blue,
                       child: const Text('Submit'),
                       onPressed: () {
-                        if (_formKey.currentState?.validate() ?? false) {
-                          _isValidated = true;
+                        setState(() {
+                          _isValidated =
+                              _formKey.currentState?.validate() ?? false;
+                        });
+
+                        if (_isValidated) {
+                          Navigator.pushNamed(
+                            context,
+                            FormFieldPage.route,
+                            arguments: {
+                              'nik': _nik.text,
+                              'password': _password.text,
+                            },
+                          );
+
+                          /*                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) {
+                                return FormFieldPage(
+                                  nik: _nik.text,
+                                  password: _password.text,
+                                );
+                              },
+                            ),
+                          );*/
+                        }
+
+/*                        if (_formKey.currentState?.validate() ?? false) {
+                          setState(() => _isValidated = true);
                           // debugPrint('tervalidasi');
                           // debugPrint('NIK: ${_nik.text}');
                           // debugPrint('Password: ${_password.text}');
@@ -115,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                           //   return FormFieldPage(
                           //       nik: _nik.text, password: _password.text);
                           // }));
-                        }
+                        }*/
                       }),
                 ),
                 Text(_message ?? 'belum tervalidasi'),
@@ -135,4 +163,10 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
+}
+
+_() {
+  int? angka;
+  int angka2 = 1;
+  int hasil = angka! + angka2;
 }

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 
 class FormFieldPage extends StatefulWidget {
-  const FormFieldPage({Key? key, required this.nik, required this.password})
+  final Map<String, dynamic>? arguments;
+
+  const FormFieldPage({Key? key, required this.arguments}) : super(key: key);
+
+/*  const FormFieldPage({Key? key, required this.nik, required this.password})
       : super(key: key);
   final String nik;
-  final String password;
+  final String password;*/
 
   static const route = '/form-field-page';
 
@@ -84,9 +88,10 @@ class _FormFieldPageState extends State<FormFieldPage> {
                 ),
                 const SizedBox(height: 24),
                 Text(_message ?? 'Belum Tervalidasi'),
-                SizedBox(height: 16,),
-                Text('NIK: ${widget.nik}'),
-                Text('Password: ${widget.password}')
+                const SizedBox(height: 16),
+                Text('NIK: ${widget.arguments?['nik'] ?? 'Tidak ada NIK'}'),
+                Text(
+                    'Password: ${widget.arguments?['password'] ?? 'Tidak ada password'}')
               ],
             ),
           ),
