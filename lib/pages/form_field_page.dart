@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class FormFieldPage extends StatefulWidget {
-  const FormFieldPage({Key? key}) : super(key: key);
+  const FormFieldPage({Key? key, required this.nik, required this.password})
+      : super(key: key);
+  final String nik;
+  final String password;
 
   static const route = '/form-field-page';
 
@@ -71,7 +74,6 @@ class _FormFieldPageState extends State<FormFieldPage> {
                   keyboardType: TextInputType.number,
                 ),*/
                 MaterialButton(
-
                   color: Colors.grey[200],
                   onPressed: () {
                     if (_formKey.currentState?.validate() ?? false) {
@@ -82,6 +84,9 @@ class _FormFieldPageState extends State<FormFieldPage> {
                 ),
                 const SizedBox(height: 24),
                 Text(_message ?? 'Belum Tervalidasi'),
+                SizedBox(height: 16,),
+                Text('NIK: ${widget.nik}'),
+                Text('Password: ${widget.password}')
               ],
             ),
           ),

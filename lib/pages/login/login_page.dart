@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:learn_flutter/pages/first_page.dart';
+import 'package:learn_flutter/pages/form_field_page.dart';
 
 import 'login_field.dart';
 
@@ -13,9 +15,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
+  String? _message;
 
   final _nik = TextEditingController();
   final _password = TextEditingController();
+  bool _isValidated = false;
 
   @override
   void dispose() {
@@ -92,17 +96,38 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
-                MaterialButton(
-                  color: Colors.blue,
-                  child: const Text('Submit'),
-                  onPressed: () {
-                    if (_formKey.currentState?.validate() ?? false) {
-                      debugPrint('tervalidasi');
-                      debugPrint('NIK: ${_nik.text}');
-                      debugPrint('Password: ${_password.text}');
-                    }
-                  },
+                Center(
+                  child: MaterialButton(
+                      color: Colors.blue,
+                      child: const Text('Submit'),
+                      onPressed: () {
+                        if (_formKey.currentState?.validate() ?? false) {
+                          _isValidated = true;
+                          // debugPrint('tervalidasi');
+                          // debugPrint('NIK: ${_nik.text}');
+                          // debugPrint('Password: ${_password.text}');
+                          // setState(() {
+                          //   _message = 'Tervalidasi';
+                          //   _isValidated = true;
+                          // });
+                          // Navigator.push(context,
+                          //     MaterialPageRoute(builder: (context) {
+                          //   return FormFieldPage(
+                          //       nik: _nik.text, password: _password.text);
+                          // }));
+                        }
+                      }),
                 ),
+                Text(_message ?? 'belum tervalidasi'),
+                if (_isValidated)
+                  Center(
+                    child: Column(
+                      children: [
+                        Text('NIK: ${_nik.text}'),
+                        Text('Password: ${_password.text}')
+                      ],
+                    ),
+                  )
               ],
             ),
           ),
