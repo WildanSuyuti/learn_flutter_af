@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learn_flutter/row/row_demo_page.dart';
+import 'package:learn_flutter/tugas%202/home_hypermart.dart';
+import 'package:learn_flutter/tugas%202/previous_order_page.dart';
+import 'package:learn_flutter/tugas/detail_product.dart';
+import 'package:learn_flutter/tugas/home_page_produck.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,10 +14,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp(debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.red),
       // home: const LoginPage(),
-      home: const RowDemoPage(),
+      home:  PreviousOrderPage()
     );
   }
 }
@@ -60,12 +64,3 @@ class LoginPagePurple extends StatelessWidget {
   }
 }
 
-/*class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-}*/
