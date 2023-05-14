@@ -138,15 +138,15 @@ class _HomeHyperMartState extends State<HomeHyperMart> {
               const EdgeInsets.only(top: 25, left: 30, right: 30, bottom: 15),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-               const Text(
+            children: const [
+               Text(
                 'Categories',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.bold),
               ),
-              const Icon(Icons.arrow_forward_ios)
+              Icon(Icons.arrow_forward_ios)
             ],
           ),
         ),
@@ -269,7 +269,7 @@ Widget search() {
 }
 
 class CategoriesWidget extends StatelessWidget {
-  CategoriesWidget(
+  const CategoriesWidget(
       {Key? key, required this.text, required this.color, required this.image})
       : super(key: key);
 

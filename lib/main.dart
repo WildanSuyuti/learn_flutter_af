@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learn_flutter/row/row_demo_page.dart';
+import 'package:learn_flutter/tugas%202/brand_page.dart';
 import 'package:learn_flutter/tugas%202/home_hypermart.dart';
 import 'package:learn_flutter/tugas%202/previous_order_page.dart';
 import 'package:learn_flutter/tugas/detail_product.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.red),
       // home: const LoginPage(),
-      home:  PreviousOrderPage()
+      home:  BrandsPage()
     );
   }
 }
